@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bringthe-hub
+  namespace: wireservers
+  labels:
+    app: bringthe-hub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bringthe-hub
+  template:
+    metadata:
+      labels:
+        app: bringthe-hub
+    spec:
+      containers:
+        - name: bringthe-hub
+          image: wsws/bringthe-hub:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "32Mi"
+              cpu: "50m"
+            limits:
+              memory: "64Mi"
+              cpu: "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bringthe-hub
+  namespace: wireservers
+spec:
+  selector:
+    app: bringthe-hub
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP

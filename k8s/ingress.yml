@@ -1,0 +1,70 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wireservers-ingress
+  namespace: wireservers
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: wireservers.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wireservers-website
+                port:
+                  number: 80
+    - host: bringthe.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: bringthe-hub
+                port:
+                  number: 80
+    - host: diet.bringthe.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: bringthe-diet
+                port:
+                  number: 3001
+    - host: api.wireservers.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: food-api
+                port:
+                  number: 5000
+    - host: wsapi.wireservers.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wsapi
+                port:
+                  number: 3000
+    - host: docs.reactnatives.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: react-natives-docs
+                port:
+                  number: 80

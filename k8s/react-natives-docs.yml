@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-natives-docs
+  namespace: wireservers
+  labels:
+    app: react-natives-docs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-natives-docs
+  template:
+    metadata:
+      labels:
+        app: react-natives-docs
+    spec:
+      containers:
+        - name: react-natives-docs
+          image: wsws/react-natives-docs:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "32Mi"
+              cpu: "50m"
+            limits:
+              memory: "64Mi"
+              cpu: "100m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-natives-docs
+  namespace: wireservers
+spec:
+  selector:
+    app: react-natives-docs
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP

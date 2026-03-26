@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: wireservers
+data:
+  DB_NAME: "foods-test"
+  DB_FOODS_COLLECTION: "foundationfoods"
+  DB_NUTRITION_COLLECTION: "nutritionfacts"
+  DB_RECIPES_COLLECTION: "recipes"
+  DB_DIETS_COLLECTION: "diettypes"
+  DB_BLOG_COLLECTION: "blogposts"
+  DB_MEALPLANS_COLLECTION: "mealplans"
+  DB_USERS_COLLECTION: "users"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secrets
+  namespace: wireservers
+type: Opaque
+stringData:
+  MONGO_URI: "REPLACE_WITH_YOUR_MONGO_URI"

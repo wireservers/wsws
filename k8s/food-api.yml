@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: food-api
+  namespace: wireservers
+  labels:
+    app: food-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: food-api
+  template:
+    metadata:
+      labels:
+        app: food-api
+    spec:
+      containers:
+        - name: food-api
+          image: wsws/food-api:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secrets
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: food-api
+  namespace: wireservers
+spec:
+  selector:
+    app: food-api
+  ports:
+    - port: 5000
+      targetPort: 5000
+  type: ClusterIP

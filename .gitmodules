@@ -1,0 +1,18 @@
+[submodule "website"]
+	path = website
+	url = https://github.com/wireservers/website.git
+[submodule "apis/food-api"]
+	path = apis/food-api
+	url = https://github.com/wireservers/food-api.git
+[submodule "apis/wsapi"]
+	path = apis/wsapi
+	url = https://github.com/wireservers/wsapi.git
+[submodule "packages/react-natives"]
+	path = packages/react-natives
+	url = https://github.com/wireservers/wireservers-ui.git
+[submodule "bringthe/bring-the-diet"]
+	path = bringthe/bring-the-diet
+	url = https://github.com/wireservers/bring-the-diet.git
+[submodule "bringthe/bring-the"]
+	path = bringthe/bring-the
+	url = https://github.com/wireservers/bring-the.git

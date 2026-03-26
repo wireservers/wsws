@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  # === APIs ===
+  food-api:
+    build: ./apis/food-api
+    ports:
+      - "5000:5000"
+    env_file: ./apis/food-api/.env
+    restart: unless-stopped
+
+  wsapi:
+    build: ./apis/wsapi
+    ports:
+      - "3000:3000"
+    env_file: ./apis/wsapi/.env
+    restart: unless-stopped
+
+  # === Web Apps ===
+  wireservers-website:
+    build: ./website/app
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  bringthe-hub:
+    build: ./bringthe/bring-the
+    ports:
+      - "8081:80"
+    restart: unless-stopped
+
+  bringthe-diet:
+    build:
+      context: ./bringthe/bring-the-diet
+      args:
+        NEXT_PUBLIC_API_URL: http://food-api:5000
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+  react-natives-docs:
+    build: ./packages/react-natives/site
+    ports:
+      - "8082:80"
+    restart: unless-stopped

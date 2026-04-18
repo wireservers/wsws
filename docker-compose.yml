@@ -18,7 +18,7 @@ services:
 
   # === Web Apps ===
   wireservers-website:
-    build: ./website/app
+    build: ./wireservers/app
     ports:
       - "8080:80"
     restart: unless-stopped

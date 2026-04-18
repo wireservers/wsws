@@ -29,7 +29,7 @@ docker compose up --build
 ```bash
 docker build -t wsws/food-api:latest ./apis/food-api
 docker build -t wsws/wsapi:latest ./apis/wsapi
-docker build -t wsws/wireservers-website:latest ./website/app
+docker build -t wsws/wireservers-website:latest ./wireservers/app
 docker build -t wsws/bringthe-hub:latest ./bringthe/bring-the
 docker build -t wsws/bringthe-diet:latest ./bringthe/bring-the-diet
 docker build -t wsws/react-natives-docs:latest ./packages/react-natives/site

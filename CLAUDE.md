@@ -8,14 +8,14 @@ Multi-component nutrition platform. Each sub-project has its own CLAUDE.md with 
 
 | Project | Path | CLAUDE.md |
 |---|---|---|
-| Angular website (active) | `website/app/` | [website/app/CLAUDE.md](website/app/CLAUDE.md) |
-| Angular website (legacy) | `website/legacy/` | [website/legacy/CLAUDE.md](website/legacy/CLAUDE.md) |
+| Angular website (active) | `wireservers/app/` | [wireservers/app/CLAUDE.md](wireservers/app/CLAUDE.md) |
+| Angular website (legacy) | `wireservers/legacy/` | [wireservers/legacy/CLAUDE.md](wireservers/legacy/CLAUDE.md) |
 | Node.js API | `api/wsapi/` | [api/wsapi/CLAUDE.md](api/wsapi/CLAUDE.md) |
 | .NET 10 API | `api/food-api/` | [api/food-api/CLAUDE.md](api/food-api/CLAUDE.md) |
 | React Native demo app | `wireservers-ui/site/` | [wireservers-ui/site/CLAUDE.md](wireservers-ui/site/CLAUDE.md) |
 | React Native component library | `wireservers-ui/packages/react-natives/` | [wireservers-ui/packages/react-natives/CLAUDE.md](wireservers-ui/packages/react-natives/CLAUDE.md) |
 
-`website/legacy/` is a legacy reference — do not add features there.
+`wireservers/legacy/` is a legacy reference — do not add features there.
 
 ## Shared Infrastructure
 

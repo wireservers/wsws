@@ -1,5 +1,5 @@
 [submodule "website"]
-	path = website
+	path = wireservers
 	url = https://github.com/wireservers/website.git
 [submodule "apis/food-api"]
 	path = apis/food-api

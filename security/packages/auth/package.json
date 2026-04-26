@@ -1,0 +1,56 @@
+{
+  "name": "@wsws/auth",
+  "version": "0.1.0",
+  "description": "Shared Entra ID (Azure AD) auth for WireServers projects. Multi-tenant. React + Node entry points.",
+  "license": "UNLICENSED",
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "type": "module",
+  "main": "./dist/core/index.js",
+  "types": "./dist/core/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js"
+    },
+    "./node": {
+      "types": "./dist/node/index.d.ts",
+      "import": "./dist/node/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@azure/msal-browser": "^3.0.0",
+    "@azure/msal-react": "^2.0.0",
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "@azure/msal-browser": { "optional": true },
+    "@azure/msal-react": { "optional": true },
+    "react": { "optional": true }
+  },
+  "dependencies": {
+    "jose": "^5.9.0"
+  },
+  "devDependencies": {
+    "@azure/msal-browser": "^3.27.0",
+    "@azure/msal-react": "^2.2.0",
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "typescript": "^5.5.4"
+  }
+}

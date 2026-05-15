@@ -16,3 +16,6 @@
 [submodule "bringthe/bring-the"]
 	path = bringthe/bring-the
 	url = https://github.com/wireservers/bring-the.git
+[submodule "ws-security"]
+	path = ws-security
+	url = https://github.com/todd-ws/security.git

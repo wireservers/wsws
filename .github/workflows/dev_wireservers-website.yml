@@ -26,9 +26,11 @@ jobs:
         env:
           SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}
         run: |
-          if [ -n "$SUBMODULES_TOKEN" ]; then
-            git config --global url."https://x-access-token:${SUBMODULES_TOKEN}@github.com/".insteadOf "https://github.com/"
+          if [ -z "$SUBMODULES_TOKEN" ]; then
+            echo "::error::SUBMODULES_TOKEN is not set — cannot clone private submodules"
+            exit 1
           fi
+          git config --global url."https://x-access-token:${SUBMODULES_TOKEN}@github.com/".insteadOf "https://github.com/"
 
       - name: Checkout project submodule
         run: git submodule update --init --depth=1 wireservers

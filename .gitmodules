@@ -19,3 +19,6 @@
 [submodule "ws-security"]
 	path = ws-security
 	url = https://github.com/wireservers/security.git
+[submodule "bringthe/bring-the-budget"]
+	path = bringthe/bring-the-budget
+	url = https://github.com/wireservers/bring-the-budget.git

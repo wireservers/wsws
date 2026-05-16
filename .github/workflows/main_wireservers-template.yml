@@ -1,12 +1,9 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App - wireservers-template
 
 on:
   push:
     branches:
-      - develop
+      - main
   workflow_dispatch:
 
 jobs:
@@ -51,8 +48,6 @@ jobs:
           cp -rL web/.next/standalone ./deploy
           cp -rL web/.next/static ./deploy/web/.next/static
           [ -d web/public ] && cp -rL web/public ./deploy/web/public || true
-          # Strip scripts/packageManager from the deployed root package.json so Azure
-          # Oryx does not try to run npm build during zip deploy.
           if [ -f ./deploy/package.json ]; then
             node -e "const fs=require('fs'); const p=JSON.parse(fs.readFileSync('./deploy/package.json','utf8')); delete p.scripts; delete p.packageManager; fs.writeFileSync('./deploy/package.json', JSON.stringify(p,null,2));"
           fi

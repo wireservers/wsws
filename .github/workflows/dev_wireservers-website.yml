@@ -1,0 +1,44 @@
+name: Build and deploy website to Azure Static Web Apps (dev)
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - wireservers/app/**
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.x'
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: wireservers/app
+
+      - name: Build web export
+        run: npm run build
+        working-directory: wireservers/app
+
+      - name: Deploy to Azure Static Web App
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_PROD }}
+          action: 'upload'
+          app_location: 'wireservers/app/dist'
+          skip_app_build: true

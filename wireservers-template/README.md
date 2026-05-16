@@ -32,18 +32,17 @@ web app registration before signing in.
 
 GitHub Actions workflows live in `.github/workflows/`:
 
-- `develop_wireservers-template-dev.yml` deploys `develop` to the
-  `wireservers-template-dev` Azure Web App.
+- The WSWS monorepo uses the root workflow
+  `.github/workflows/develop_wireservers-template.yml` to deploy `develop` to
+  the `wireservers-template` Azure Web App.
+- `develop_wireservers-template-dev.yml` is retained for a future standalone
+  `wireservers-template` repository and also targets `wireservers-template`.
 - `main_wireservers-template.yml` deploys `main` to the
   `wireservers-template` Azure Web App.
 
 Create these GitHub repository secrets for OIDC login:
 
 ```text
-AZUREAPPSERVICE_CLIENTID_WIRESERVERS_TEMPLATE_DEV
-AZUREAPPSERVICE_TENANTID_WIRESERVERS_TEMPLATE_DEV
-AZUREAPPSERVICE_SUBSCRIPTIONID_WIRESERVERS_TEMPLATE_DEV
-
 AZUREAPPSERVICE_CLIENTID_WIRESERVERS_TEMPLATE
 AZUREAPPSERVICE_TENANTID_WIRESERVERS_TEMPLATE
 AZUREAPPSERVICE_SUBSCRIPTIONID_WIRESERVERS_TEMPLATE

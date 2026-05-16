@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     default: "Wireservers Template",
     template: "%s | Wireservers Template",
   },
-  description: "Wireservers template shell app with ws-security MSAL integration.",
+  description: "Wireservers template shell app with wireservers-security MSAL integration.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

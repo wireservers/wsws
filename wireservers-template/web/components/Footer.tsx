@@ -3,7 +3,7 @@ export function Footer() {
     <footer style={styles.footer}>
       <div style={styles.inner}>
         <p style={styles.brand}>Wireservers Template</p>
-        <p style={styles.copy}>Shell app connected to the Azure ws-security API.</p>
+        <p style={styles.copy}>Shell app connected to the Azure wireservers-security API.</p>
       </div>
     </footer>
   );

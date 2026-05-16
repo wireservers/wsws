@@ -16,7 +16,7 @@ Each component has its own CLAUDE.md with stack-specific guidance; read it befor
 | .NET 10 API | [apis/food-api/](apis/food-api/CLAUDE.md) | Controllers → Services → Repositories, count caching, hard-delete |
 | React Native component library | [packages/react-natives/](packages/react-natives/) | `@wireservers-ui/react-natives` (submodule) |
 | BringThe consumer apps | [bringthe/](bringthe/CLAUDE.md) | `bring-the` hub + `bring-the-diet` monorepo + 16 stub apps |
-| Auth/RBAC service | [ws-security/](ws-security/CLAUDE.md) | .NET 10 + Next.js 15, Entra External ID, three-layer authz |
+| Auth/RBAC service | [wireservers-security/](wireservers-security/CLAUDE.md) | .NET 10 + Next.js 15, Entra External ID, three-layer authz |
 | Next.js template | `wireservers-template/` | pnpm workspace, used to scaffold new BringThe apps |
 
 Other top-level dirs (`apis/checklist-api`, `apis/exercise-api`, `apis/gamification-api`, `apis/project-templates-api`, `apis/substitution-api`, `apis/tech-stack-api`) are planned/early-stage APIs — check for a README before assuming there's code to run.
@@ -30,7 +30,7 @@ These apply across multiple components and aren't obvious from any single subtre
 - **Cosmos DB `retrywrites=false` is mandatory.** Both `wsapi` and `food-api` talk to the same Azure Cosmos DB (Mongo API). Without `retrywrites=false` the driver hangs on cascading retries. Full URI shape: `mongodb+srv://...?tls=true&authMechanism=SCRAM-SHA-256&retrywrites=false&maxIdleTimeMS=120000`.
 - **Soft-delete divergence.** `wsapi` (Node) soft-deletes every document; `food-api` (.NET) hard-deletes. Account for this when writing migrations or reasoning about "deleted" records.
 - **Count caching (food-api).** Repositories cache `countDocuments()` for 5 minutes to save Cosmos RUs — preserve this when adding repositories.
-- **Three-layer authorization (ws-security).** RBAC + ReBAC + ABAC; all three must pass. Global EF query filters on `Document` restrict `TeamId`.
+- **Three-layer authorization (wireservers-security).** RBAC + ReBAC + ABAC; all three must pass. Global EF query filters on `Document` restrict `TeamId`.
 - **Package managers differ per project.** `bring-the-diet` enforces `pnpm@10.28.0`; `wireservers-template` is a pnpm workspace; `wsapi` uses pnpm; most others use npm. Check `packageManager` in each `package.json` before running install.
 - **`wireservers/legacy/` is archived.** Read-only reference for the old Angular site.
 
@@ -61,8 +61,8 @@ Run from the project root unless noted:
 | wireservers/app | `cd wireservers/app && npm start` | Expo + RN Web |
 | bring-the (hub) | `cd bringthe/bring-the && npm run start` | Expo |
 | bring-the-diet | `cd bringthe/bring-the-diet && pnpm i && pnpm dev` | web on :3001 |
-| ws-security API | `cd ws-security/api && dotnet run` | http://localhost:5080 |
-| ws-security web | `cd ws-security/web && npm run dev` | http://localhost:3000 |
+| wireservers-security API | `cd wireservers-security/api && dotnet run` | http://localhost:5080 |
+| wireservers-security web | `cd wireservers-security/web && npm run dev` | http://localhost:3000 |
 | Full stack (Docker) | `docker compose up` | builds all services per [docker-compose.yml](docker-compose.yml) |
 
 The `docker-compose.yml` expects each API's `.env` to exist locally before `up`.

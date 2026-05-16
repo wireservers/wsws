@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const stats = [
   { label: "Auth", value: "MSAL BFF" },
-  { label: "API", value: "Azure ws-security" },
+  { label: "API", value: "Azure wireservers-security" },
   { label: "Shell", value: "Next 15" },
 ];
 
@@ -19,7 +19,7 @@ export default function HomePage() {
       <section style={styles.heroBanner}>
         <div>
           <h2 style={styles.heroTitle}>Start from the Wireservers shell</h2>
-          <p style={styles.heroSubtitle}>A BringThe-style app frame with secure delegated calls to ws-security.</p>
+          <p style={styles.heroSubtitle}>A BringThe-style app frame with secure delegated calls to wireservers-security.</p>
         </div>
         <Link href="/dashboard" style={styles.heroButton}>Open Dashboard</Link>
       </section>
@@ -41,7 +41,7 @@ export default function HomePage() {
         <div style={styles.cardGrid}>
           {[
             ["Dashboard", "Authenticated landing page with a server-side /api/me call.", "/dashboard"],
-            ["Profile", "Current Entra account and ws-security mirrored user details.", "/profile"],
+            ["Profile", "Current Entra account and wireservers-security mirrored user details.", "/profile"],
             ["Security", "Endpoint, scope, and purpose-of-use configuration surface.", "/settings"],
           ].map(([title, body, href]) => (
             <Link key={title} href={href} style={styles.shellCard}>

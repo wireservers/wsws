@@ -1,7 +1,7 @@
 # Wireservers Template
 
 Shell Next.js app that mirrors the BringThe Diet app structure and uses the
-same server-side MSAL flow as `ws-security`.
+same server-side MSAL flow as `wireservers-security`.
 
 ## Run
 
@@ -23,7 +23,7 @@ MSAL runs as a backend-for-frontend flow:
   session cookie.
 - `/api/msal/logout` clears local cookies and redirects to Entra logout.
 - server API calls use the encrypted session to attach a bearer token to the
-  Azure `ws-security` API endpoint.
+  Azure `wireservers-security` API endpoint.
 
 Set `AUTH_MICROSOFT_ENTRA_ID_ID` and `AUTH_MICROSOFT_ENTRA_ID_SECRET` from the
 web app registration before signing in.

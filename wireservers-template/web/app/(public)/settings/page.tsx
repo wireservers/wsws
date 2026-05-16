@@ -7,7 +7,7 @@ export default function SettingsPage() {
       </header>
 
       <section style={styles.panel}>
-        <h2 style={styles.panelTitle}>Azure ws-security</h2>
+        <h2 style={styles.panelTitle}>Azure wireservers-security</h2>
         <div style={styles.rows}>
           <ConfigRow label="API base URL" value={process.env.NEXT_PUBLIC_API_BASE_URL ?? "https://ws-security.azurewebsites.net"} />
           <ConfigRow label="API scope" value={process.env.NEXT_PUBLIC_API_SCOPE ?? "Not configured"} />

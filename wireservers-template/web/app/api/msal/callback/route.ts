@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { clearMsalCookies, createSessionFromCode, readLoginCookies, writeMsalSession } from "@/lib/msalAuth";
+import { clearLoginTempCookies, createSessionFromCode, readLoginCookies, writeMsalSession } from "@/lib/msalAuth";
 
 export async function GET(req: NextRequest) {
   const code = req.nextUrl.searchParams.get("code");
@@ -17,7 +17,7 @@ export async function GET(req: NextRequest) {
     const { session, callbackUrl } = await createSessionFromCode(code, state, verifier);
     const response = NextResponse.redirect(new URL(callbackUrl, req.url));
     await writeMsalSession(response, session);
-    clearMsalCookies(response);
+    clearLoginTempCookies(response);
     return response;
   } catch (authError) {
     console.error("MSAL callback failed", authError);

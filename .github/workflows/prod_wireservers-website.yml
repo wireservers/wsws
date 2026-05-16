@@ -5,7 +5,9 @@ on:
     branches:
       - main
     paths:
-      - wireservers/app/**
+      - 'wireservers'
+      - 'wireservers/app/**'
+      - '.github/workflows/prod_wireservers-website.yml'
   workflow_dispatch:
 
 env:
@@ -19,8 +21,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
+
+      - name: Configure private submodule auth
+        env:
+          SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}
+        run: |
+          if [ -n "$SUBMODULES_TOKEN" ]; then
+            git config --global url."https://x-access-token:${SUBMODULES_TOKEN}@github.com/".insteadOf "https://github.com/"
+          fi
+
+      - name: Checkout project submodule
+        run: git submodule update --init --depth=1 wireservers
 
       - name: Set up Node.js
         uses: actions/setup-node@v4

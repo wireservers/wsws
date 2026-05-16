@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'wireservers-template/**'
+      - '.github/workflows/main_wireservers-template.yml'
   workflow_dispatch:
 
 jobs:

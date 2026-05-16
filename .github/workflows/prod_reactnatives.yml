@@ -6,7 +6,9 @@ on:
     branches:
       - main
     paths:
-      - packages/react-natives/site/**
+      - 'packages/react-natives'
+      - 'packages/react-natives/site/**'
+      - '.github/workflows/prod_reactnatives.yml'
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -19,8 +21,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
+
+      - name: Configure private submodule auth
+        env:
+          SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}
+        run: |
+          if [ -n "$SUBMODULES_TOKEN" ]; then
+            git config --global url."https://x-access-token:${SUBMODULES_TOKEN}@github.com/".insteadOf "https://github.com/"
+          fi
+
+      - name: Checkout project submodule
+        run: git submodule update --init --depth=1 packages/react-natives
 
       - name: Set up Node.js version
         uses: actions/setup-node@v4

@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - develop
+    paths:
+      - 'bringthe/bring-the-diet'
+      - 'bringthe/bring-the-diet/**'
+      - '.github/workflows/develop_bring-the-diet-web-dev.yml'
   workflow_dispatch:
 
 jobs:
@@ -17,8 +21,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-        with:
-          submodules: recursive
+
+      - name: Configure private submodule auth
+        env:
+          SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}
+        run: |
+          if [ -n "$SUBMODULES_TOKEN" ]; then
+            git config --global url."https://x-access-token:${SUBMODULES_TOKEN}@github.com/".insteadOf "https://github.com/"
+          fi
+        working-directory: ${{ github.workspace }}
+
+      - name: Checkout project submodule
+        run: git submodule update --init --depth=1 bringthe/bring-the-diet
+        working-directory: ${{ github.workspace }}
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v5

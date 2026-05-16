@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'ws-security'
+      - 'ws-security/**'
+      - '.github/workflows/main_ws-security.yml'
   workflow_dispatch:
 
 jobs:
@@ -17,8 +21,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
+
+      - name: Configure private submodule auth
+        env:
+          SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}
+        run: |
+          if [ -n "$SUBMODULES_TOKEN" ]; then
+            git config --global url."https://x-access-token:${SUBMODULES_TOKEN}@github.com/".insteadOf "https://github.com/"
+          fi
+        working-directory: ${{ github.workspace }}
+
+      - name: Checkout project submodule
+        run: git submodule update --init --depth=1 ws-security
+        working-directory: ${{ github.workspace }}
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
@@ -49,8 +64,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
+
+      - name: Configure private submodule auth
+        env:
+          SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}
+        run: |
+          if [ -n "$SUBMODULES_TOKEN" ]; then
+            git config --global url."https://x-access-token:${SUBMODULES_TOKEN}@github.com/".insteadOf "https://github.com/"
+          fi
+        working-directory: ${{ github.workspace }}
+
+      - name: Checkout project submodule
+        run: git submodule update --init --depth=1 ws-security
+        working-directory: ${{ github.workspace }}
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4

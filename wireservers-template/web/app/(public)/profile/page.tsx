@@ -22,7 +22,7 @@ export default async function ProfilePage() {
       </section>
 
       <section style={styles.panel}>
-        <h2 style={styles.panelTitle}>ws-security User</h2>
+        <h2 style={styles.panelTitle}>wireservers-security User</h2>
         {result.ok ? (
           <div style={styles.detailsGrid}>
             <Detail label="Display name" value={result.me.displayName} />

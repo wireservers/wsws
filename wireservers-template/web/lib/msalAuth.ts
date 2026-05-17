@@ -149,6 +149,11 @@ export function clearMsalCookies(response: Response) {
   response.headers.append("Set-Cookie", serializeCookie(verifierCookie, "", 0));
 }
 
+export function clearLoginTempCookies(response: Response) {
+  response.headers.append("Set-Cookie", serializeCookie(stateCookie, "", 0));
+  response.headers.append("Set-Cookie", serializeCookie(verifierCookie, "", 0));
+}
+
 export function writeLoginCookies(response: Response, state: string, verifier: string) {
   response.headers.append("Set-Cookie", serializeCookie(stateCookie, state, 900));
   response.headers.append("Set-Cookie", serializeCookie(verifierCookie, verifier, 900));

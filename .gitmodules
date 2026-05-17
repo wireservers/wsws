@@ -22,3 +22,6 @@
 [submodule "bringthe/bring-the-budget"]
 	path = bringthe/bring-the-budget
 	url = https://github.com/wireservers/bring-the-budget.git
+[submodule "packages/next-natives"]
+	path = packages/next-natives
+	url = https://github.com/wireservers/next-natives.git

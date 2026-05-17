@@ -19,6 +19,7 @@ Agents should run these automatically when working on code:
 - **bringthe/bring-the-diet (pnpm monorepo):** `pnpm i && pnpm dev` (web :3001)
 - **wireservers/app (Expo+RNW):** `npm start`
 - **react-natives (npm package):** No build; ships source directly. Use `npx react-natives init` for setup.
+- **next-natives (Next.js package):** `npm install && npm run build`; imports theme with `@wireservers-ui/next-natives/theme.css`.
 - **wireservers-security (.NET + Next.js):** API: `dotnet run` (:5080); Web: `npm run dev` (:3000)
 
 ## Architecture Decisions
@@ -34,6 +35,7 @@ Agents should run these automatically when working on code:
 - bringthe/bring-the-diet: Inline React.CSSProperties + CSS custom properties (NOT Tailwind classes).
 - wireservers-security: Three-layer auth; global query filters on `Document` restrict TeamId.
 - react-natives: Components use `React.forwardRef`, `displayName`, `tv()` from Tailwind Variants.
+- next-natives: DOM components mirror react-natives variant names, use `React.forwardRef`, `displayName`, and `tv()`.
 
 ## Environment Variables
 
@@ -54,6 +56,7 @@ See [ESSENTIAL_KNOWLEDGE.md](/memories/repo/ESSENTIAL_KNOWLEDGE.md) for complete
 - [wireservers/app/CLAUDE.md](wireservers/app/CLAUDE.md): Expo+RNW setup.
 - [bringthe/bring-the-diet/CLAUDE.md](bringthe/bring-the-diet/CLAUDE.md): pnpm monorepo, styling.
 - [packages/react-natives/packages/react-natives/CLAUDE.md](packages/react-natives/packages/react-natives/CLAUDE.md): Component library patterns.
+- [packages/next-natives/CLAUDE.md](packages/next-natives/CLAUDE.md): Next.js component library patterns.
 - [wireservers-security/CLAUDE.md](wireservers-security/CLAUDE.md): Authorization layers.
 - [ESSENTIAL_KNOWLEDGE.md](/memories/repo/ESSENTIAL_KNOWLEDGE.md): Complete reference (build commands, pitfalls, key files).
 

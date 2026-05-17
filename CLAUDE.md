@@ -15,6 +15,7 @@ Each component has its own CLAUDE.md with stack-specific guidance; read it befor
 | Node.js API | [apis/wsapi/](apis/wsapi/CLAUDE.md) | CRUD factory, soft-delete on all documents |
 | .NET 10 API | [apis/food-api/](apis/food-api/CLAUDE.md) | Controllers → Services → Repositories, count caching, hard-delete |
 | React Native component library | [packages/react-natives/](packages/react-natives/) | `@wireservers-ui/react-natives` (submodule) |
+| Next.js component library | [packages/next-natives/](packages/next-natives/CLAUDE.md) | `@wireservers-ui/next-natives`, DOM/Next sibling to react-natives |
 | BringThe consumer apps | [bringthe/](bringthe/CLAUDE.md) | `bring-the` hub + `bring-the-diet` monorepo + 16 stub apps |
 | Auth/RBAC service | [wireservers-security/](wireservers-security/CLAUDE.md) | .NET 10 + Next.js 15, Entra External ID, three-layer authz |
 | Next.js template | `wireservers-template/` | pnpm workspace, used to scaffold new BringThe apps |
@@ -61,6 +62,7 @@ Run from the project root unless noted:
 | wireservers/app | `cd wireservers/app && npm start` | Expo + RN Web |
 | bring-the (hub) | `cd bringthe/bring-the && npm run start` | Expo |
 | bring-the-diet | `cd bringthe/bring-the-diet && pnpm i && pnpm dev` | web on :3001 |
+| next-natives | `cd packages/next-natives && npm install && npm run build` | Next.js component library |
 | wireservers-security API | `cd wireservers-security/api && dotnet run` | http://localhost:5080 |
 | wireservers-security web | `cd wireservers-security/web && npm run dev` | http://localhost:3000 |
 | Full stack (Docker) | `docker compose up` | builds all services per [docker-compose.yml](docker-compose.yml) |

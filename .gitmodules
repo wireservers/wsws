@@ -25,3 +25,6 @@
 [submodule "packages/next-natives"]
 	path = packages/next-natives
 	url = https://github.com/wireservers/next-natives.git
+[submodule "wireservers-template"]
+	path = wireservers-template
+	url = https://github.com/wireservers/wireservers-template.git

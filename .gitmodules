@@ -16,6 +16,15 @@
 [submodule "bringthe/bring-the"]
 	path = bringthe/bring-the
 	url = https://github.com/wireservers/bring-the.git
-[submodule "ws-security"]
-	path = ws-security
-	url = https://github.com/todd-ws/security.git
+[submodule "wireservers-security"]
+	path = wireservers-security
+	url = https://github.com/wireservers/security.git
+[submodule "bringthe/bring-the-budget"]
+	path = bringthe/bring-the-budget
+	url = https://github.com/wireservers/bring-the-budget.git
+[submodule "packages/next-natives"]
+	path = packages/next-natives
+	url = https://github.com/wireservers/next-natives.git
+[submodule "wireservers-template"]
+	path = wireservers-template
+	url = https://github.com/wireservers/wireservers-template.git

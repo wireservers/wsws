@@ -6,7 +6,10 @@ name: Build and deploy Node.js app to Azure Web App - wireservers-template
 on:
   push:
     branches:
-      - main
+      - develop
+    paths:
+      - 'wireservers-template/**'
+      - '.github/workflows/develop_wireservers-template.yml'
   workflow_dispatch:
 
 jobs:
@@ -14,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    defaults:
+      run:
+        working-directory: wireservers-template
 
     steps:
       - uses: actions/checkout@v5
@@ -28,6 +34,7 @@ jobs:
         with:
           node-version: '24.x'
           cache: 'pnpm'
+          cache-dependency-path: wireservers-template/pnpm-lock.yaml
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -57,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: ./deploy
+          path: wireservers-template/deploy
 
   deploy:
     runs-on: ubuntu-latest

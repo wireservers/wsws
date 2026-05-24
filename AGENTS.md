@@ -8,7 +8,7 @@ This workspace contains a nutrition/wellness platform with multiple interconnect
 - **Count Caching (food-api):** Repositories cache `countDocuments()` for 5 minutes to save RUs. Preserve this pattern when adding new repositories.
 - **Soft-Delete Divergence:** wsapi (Node.js) uses soft-delete on all documents; food-api (.NET) hard-deletes. Account for this in data migrations.
 - **Package Manager:** bring-the-diet monorepo requires `pnpm 10.28.0` (enforced). Other projects use npm.
-- **Authentication Layers (ws-security):** Defense-in-depth with RBAC + ReBAC + ABAC — all three layers must pass for authorization.
+- **Authentication Layers (wireservers-security):** Defense-in-depth with RBAC + ReBAC + ABAC — all three layers must pass for authorization.
 
 ## Build/Test Commands
 
@@ -19,21 +19,23 @@ Agents should run these automatically when working on code:
 - **bringthe/bring-the-diet (pnpm monorepo):** `pnpm i && pnpm dev` (web :3001)
 - **wireservers/app (Expo+RNW):** `npm start`
 - **react-natives (npm package):** No build; ships source directly. Use `npx react-natives init` for setup.
-- **ws-security (.NET + Next.js):** API: `dotnet run` (:5080); Web: `npm run dev` (:3000)
+- **next-natives (Next.js package):** `npm install && npm run build`; imports theme with `@wireservers-ui/next-natives/theme.css`.
+- **wireservers-security (.NET + Next.js):** API: `dotnet run` (:5080); Web: `npm run dev` (:3000)
 
 ## Architecture Decisions
 
 - **Repository Pattern (food-api):** Controllers → Services → Repositories → MongoDB.Driver with DI.
 - **CRUD Factory (wsapi):** Auto-generated routes from config arrays with soft-delete and audit fields.
 - **Compound Components (react-natives):** Context-based styling with Tailwind Variants.
-- **Authorization Dispatch (ws-security):** Swappable admin UI templates (a/b/c) per user.
+- **Authorization Dispatch (wireservers-security):** Swappable admin UI templates (a/b/c) per user.
 
 ## Project-Specific Conventions
 
 - Do NOT add features to `wireservers/legacy/` (archived Angular 17).
 - bringthe/bring-the-diet: Inline React.CSSProperties + CSS custom properties (NOT Tailwind classes).
-- ws-security: Three-layer auth; global query filters on `Document` restrict TeamId.
+- wireservers-security: Three-layer auth; global query filters on `Document` restrict TeamId.
 - react-natives: Components use `React.forwardRef`, `displayName`, `tv()` from Tailwind Variants.
+- next-natives: DOM components mirror react-natives variant names, use `React.forwardRef`, `displayName`, and `tv()`.
 
 ## Environment Variables
 
@@ -54,7 +56,8 @@ See [ESSENTIAL_KNOWLEDGE.md](/memories/repo/ESSENTIAL_KNOWLEDGE.md) for complete
 - [wireservers/app/CLAUDE.md](wireservers/app/CLAUDE.md): Expo+RNW setup.
 - [bringthe/bring-the-diet/CLAUDE.md](bringthe/bring-the-diet/CLAUDE.md): pnpm monorepo, styling.
 - [packages/react-natives/packages/react-natives/CLAUDE.md](packages/react-natives/packages/react-natives/CLAUDE.md): Component library patterns.
-- [apis/ws-security/CLAUDE.md](apis/ws-security/CLAUDE.md): Authorization layers.
+- [packages/next-natives/CLAUDE.md](packages/next-natives/CLAUDE.md): Next.js component library patterns.
+- [wireservers-security/CLAUDE.md](wireservers-security/CLAUDE.md): Authorization layers.
 - [ESSENTIAL_KNOWLEDGE.md](/memories/repo/ESSENTIAL_KNOWLEDGE.md): Complete reference (build commands, pitfalls, key files).
 
 ## Common Issues

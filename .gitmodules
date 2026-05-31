@@ -28,3 +28,63 @@
 [submodule "wireservers-template"]
 	path = wireservers-template
 	url = https://github.com/wireservers/wireservers-template.git
+[submodule "bringthe/bring-the-crafts"]
+	path = bringthe/bring-the-crafts
+	url = https://github.com/wireservers/bring-the-crafts.git
+	branch = develop
+[submodule "bringthe/bring-the-garden"]
+	path = bringthe/bring-the-garden
+	url = https://github.com/wireservers/bring-the-garden.git
+	branch = develop
+[submodule "bringthe/bring-the-games"]
+	path = bringthe/bring-the-games
+	url = https://github.com/wireservers/bring-the-games.git
+	branch = develop
+[submodule "bringthe/bring-the-fitness"]
+	path = bringthe/bring-the-fitness
+	url = https://github.com/wireservers/bring-the-fitness.git
+	branch = develop
+[submodule "bringthe/bring-the-events"]
+	path = bringthe/bring-the-events
+	url = https://github.com/wireservers/bring-the-events.git
+	branch = develop
+[submodule "bringthe/bring-the-habits"]
+	path = bringthe/bring-the-habits
+	url = https://github.com/wireservers/bring-the-habits.git
+	branch = develop
+[submodule "bringthe/bring-the-health"]
+	path = bringthe/bring-the-health
+	url = https://github.com/wireservers/bring-the-health.git
+	branch = develop
+[submodule "bringthe/bring-the-learn"]
+	path = bringthe/bring-the-learn
+	url = https://github.com/wireservers/bring-the-learn.git
+	branch = develop
+[submodule "bringthe/bring-the-music"]
+	path = bringthe/bring-the-music
+	url = https://github.com/wireservers/bring-the-music.git
+	branch = develop
+[submodule "bringthe/bring-the-projects"]
+	path = bringthe/bring-the-projects
+	url = https://github.com/wireservers/bring-the-projects.git
+	branch = develop
+[submodule "bringthe/bring-the-pets"]
+	path = bringthe/bring-the-pets
+	url = https://github.com/wireservers/bring-the-pets.git
+	branch = develop
+[submodule "bringthe/bring-the-travel"]
+	path = bringthe/bring-the-travel
+	url = https://github.com/wireservers/bring-the-travel.git
+	branch = develop
+[submodule "bringthe/bring-the-recipes"]
+	path = bringthe/bring-the-recipes
+	url = https://github.com/wireservers/bring-the-recipes.git
+	branch = develop
+[submodule "bringthe/bring-the-list"]
+	path = bringthe/bring-the-list
+	url = https://github.com/wireservers/bring-the-list.git
+	branch = develop
+[submodule "bringthe/bring-the-reads"]
+	path = bringthe/bring-the-reads
+	url = https://github.com/wireservers/bring-the-reads.git
+	branch = develop

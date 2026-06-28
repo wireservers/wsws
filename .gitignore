@@ -9,3 +9,7 @@ build/
 .angular/
 bin/
 obj/
+
+
+#Ignore insiders AI rules
+.github/instructions/codacy.instructions.md

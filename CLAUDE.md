@@ -71,9 +71,11 @@ The `docker-compose.yml` expects each API's `.env` to exist locally before `up`.
 
 ## Git Branches (react-natives library)
 
-- `sot` — source of truth (main)
-- `dev` — development
-- `prod` — production
+The submodule's remote is `github.com/wireservers/wireservers-ui`.
+
+- `main` — source of truth / production (`origin/HEAD` points here)
+- `develop` — development
+- `feat/*` — feature branches
 
 ## Submodules
 

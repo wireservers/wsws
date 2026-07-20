@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
-    "@wireservers-ui/react-natives": "^2.0.22",
+    "@wireservers-ui/react-natives": "^2.0.23",
     "babel-preset-expo": "^57.0.3",
     "expo": "~57.0.7",
     "expo-status-bar": "~57.0.1",

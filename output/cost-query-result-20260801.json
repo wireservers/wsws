@@ -1,0 +1,24 @@
+{
+  "query": {
+    "type": "ActualCost",
+    "timeframe": "Custom",
+    "timePeriod": {
+      "from": "2026-06-01T00:00:00Z",
+      "to": "2026-07-31T23:59:59Z"
+    },
+    "grouping": [
+      "BillingMonth",
+      "ServiceName"
+    ]
+  },
+  "result": {
+    "columns": [
+      "Cost",
+      "BillingMonth",
+      "ServiceName",
+      "Currency"
+    ],
+    "rows": []
+  },
+  "note": "Azure Cost Management and az consumption usage returned no rows. Retail prices were used for estimates; this is not proof of zero billed cost."
+}

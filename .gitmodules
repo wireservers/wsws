@@ -12,16 +12,16 @@
 	url = https://github.com/wireservers/wireservers-ui.git
 [submodule "bringthe/bring-the-diet"]
 	path = bringthe/bring-the-diet
-	url = https://github.com/wireservers/bring-the-diet.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-diet
 [submodule "bringthe/bring-the"]
 	path = bringthe/bring-the
-	url = https://github.com/wireservers/bring-the.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the
 [submodule "wireservers-security"]
 	path = wireservers-security
 	url = https://github.com/wireservers/security.git
 [submodule "bringthe/bring-the-budget"]
 	path = bringthe/bring-the-budget
-	url = https://github.com/wireservers/bring-the-budget.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-budget
 [submodule "packages/next-natives"]
 	path = packages/next-natives
 	url = https://github.com/wireservers/next-natives.git
@@ -30,61 +30,61 @@
 	url = https://github.com/wireservers/wireservers-template.git
 [submodule "bringthe/bring-the-crafts"]
 	path = bringthe/bring-the-crafts
-	url = https://github.com/wireservers/bring-the-crafts.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-crafts
 	branch = develop
 [submodule "bringthe/bring-the-garden"]
 	path = bringthe/bring-the-garden
-	url = https://github.com/wireservers/bring-the-garden.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-garden
 	branch = develop
 [submodule "bringthe/bring-the-games"]
 	path = bringthe/bring-the-games
-	url = https://github.com/wireservers/bring-the-games.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-games
 	branch = develop
 [submodule "bringthe/bring-the-fitness"]
 	path = bringthe/bring-the-fitness
-	url = https://github.com/wireservers/bring-the-fitness.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-fitness
 	branch = develop
 [submodule "bringthe/bring-the-events"]
 	path = bringthe/bring-the-events
-	url = https://github.com/wireservers/bring-the-events.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-events
 	branch = develop
 [submodule "bringthe/bring-the-habits"]
 	path = bringthe/bring-the-habits
-	url = https://github.com/wireservers/bring-the-habits.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-habits
 	branch = develop
 [submodule "bringthe/bring-the-health"]
 	path = bringthe/bring-the-health
-	url = https://github.com/wireservers/bring-the-health.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-health
 	branch = develop
 [submodule "bringthe/bring-the-learn"]
 	path = bringthe/bring-the-learn
-	url = https://github.com/wireservers/bring-the-learn.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-learn
 	branch = develop
 [submodule "bringthe/bring-the-music"]
 	path = bringthe/bring-the-music
-	url = https://github.com/wireservers/bring-the-music.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-music
 	branch = develop
 [submodule "bringthe/bring-the-projects"]
 	path = bringthe/bring-the-projects
-	url = https://github.com/wireservers/bring-the-projects.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-projects
 	branch = develop
 [submodule "bringthe/bring-the-pets"]
 	path = bringthe/bring-the-pets
-	url = https://github.com/wireservers/bring-the-pets.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-pets
 	branch = develop
 [submodule "bringthe/bring-the-travel"]
 	path = bringthe/bring-the-travel
-	url = https://github.com/wireservers/bring-the-travel.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-travel
 	branch = develop
 [submodule "bringthe/bring-the-recipes"]
 	path = bringthe/bring-the-recipes
-	url = https://github.com/wireservers/bring-the-recipes.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-recipes
 	branch = develop
 [submodule "bringthe/bring-the-list"]
 	path = bringthe/bring-the-list
-	url = https://github.com/wireservers/bring-the-list.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-list
 	branch = develop
 [submodule "bringthe/bring-the-reads"]
 	path = bringthe/bring-the-reads
-	url = https://github.com/wireservers/bring-the-reads.git
+	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-reads
 	branch = develop

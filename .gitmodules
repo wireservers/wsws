@@ -1,15 +1,19 @@
 [submodule "wireservers"]
 	path = wireservers
-	url = https://github.com/wireservers/website.git
+	url = https://dev.azure.com/wireservers/architecture/_git/website
+	branch = main
 [submodule "apis/food-api"]
 	path = apis/food-api
-	url = https://github.com/wireservers/food-api.git
+	url = https://dev.azure.com/wireservers/architecture/_git/food-api
+	branch = main
 [submodule "apis/wsapi"]
 	path = apis/wsapi
-	url = https://github.com/wireservers/wsapi.git
+	url = https://dev.azure.com/wireservers/architecture/_git/wsapi
+	branch = main
 [submodule "packages/react-natives"]
 	path = packages/react-natives
-	url = https://github.com/wireservers/wireservers-ui.git
+	url = https://dev.azure.com/wireservers/architecture/_git/react-natives
+	branch = main
 [submodule "bringthe/bring-the-diet"]
 	path = bringthe/bring-the-diet
 	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-diet
@@ -18,16 +22,19 @@
 	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the
 [submodule "wireservers-security"]
 	path = wireservers-security
-	url = https://github.com/wireservers/security.git
+	url = https://dev.azure.com/wireservers/architecture/_git/security
+	branch = main
 [submodule "bringthe/bring-the-budget"]
 	path = bringthe/bring-the-budget
 	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-budget
 [submodule "packages/next-natives"]
 	path = packages/next-natives
-	url = https://github.com/wireservers/next-natives.git
+	url = https://dev.azure.com/wireservers/architecture/_git/next-natives
+	branch = main
 [submodule "wireservers-template"]
 	path = wireservers-template
-	url = https://github.com/wireservers/wireservers-template.git
+	url = https://dev.azure.com/wireservers/architecture/_git/wireservers-template
+	branch = main
 [submodule "bringthe/bring-the-crafts"]
 	path = bringthe/bring-the-crafts
 	url = https://dev.azure.com/wireservers/BringThe/_git/bring-the-crafts
